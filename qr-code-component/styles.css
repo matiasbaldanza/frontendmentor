@@ -31,11 +31,13 @@ body {
 
 .qr-code-card > h2 {
     font-size: 23;
+    font-weight: 700;
     color: var(--color-card-title);
 }
 
 .qr-code-card > p {
     font-size: 15px;
+    font-weight: 400;
     color: var(--color-card-text);
 }
 
