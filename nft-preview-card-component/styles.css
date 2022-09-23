@@ -5,13 +5,21 @@ body {
 :root {
     /* Primary colors */
     --color-card-text-primary: hsl(215, 51%, 70%);      /* Soft blue */
-    --color-card-text-emphasis: hsl(178, 100%, 50%);    /* Cyan */
+    --color-card-text-price: hsl(178, 100%, 50%);    /* Cyan */
     --color-card-text-links: hsl(0, 0%, 100%);          /* White */
 
     /* Neutral colors */
     --color-main-bg: hsl(217, 54%, 11%);            /* Very dark blue (main BG) */
-    --color-card-main-bg: hsl(216, 50%, 16%);       /* Very dark blue (card BG) */
+    --color-card-bg: hsl(216, 50%, 16%);            /* Very dark blue (card BG) */
     --color-card-separator: hsl(215, 32%, 27%);     /* Very dark blue (line) */
+}
+
+/* CSS reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -20,17 +28,52 @@ body {
 }
 
 .qr-preview-card {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
     width: 320px;
     margin: 0 auto;
     border-radius: 16px;
     padding: 24px;
-    background-color: var(--color-card-main-bg);
-
+    background-color: var(--color-card-bg);
+    
     color: var(--color-card-text-primary);
+    
+    font-family: "Outfit", sans-serif;
+}
+
+.qr-preview-card h2 {
+    color: var(--color-card-text-links);
+    font-weight: 600;
+}
+
+.qr-preview-card p {
+    color: var(--color-card-text-primary);
+    font-weight: 300;
+    font-size: 18px;
 }
 
 .img-preview {
     display: block;
     width: 100%;
     border-radius: 4px;     
+}
+
+.nft-time-left {
+    float: right;
+}
+
+.nft-time-left::before {
+    display: inline-block;
+    content: "";
+    height: 18px;
+    width: 18px;
+    background-image: url("images/icon-clock.svg");   
+    background-size: cover; 
+    margin-right: 4px;
+    vertical-align: -10%;
+}
+
+#nft-price {
+    color: var(--color-card-text-price);
 }
