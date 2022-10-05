@@ -1,7 +1,7 @@
 /* RESET */
 
 * {
-    margin: 0;
+    margin: 0;     /* TODO: review if resetting margin and padding to 0 is a bad practice */
     padding: 0;
     box-sizing: border-box;
 }
@@ -10,8 +10,8 @@
 
 :root {
     /* COLORS */
-    --color-primary-red: hsl(0, 78%, 62%);
     --color-primary-cyan: hsl(180, 62%, 55%);
+    --color-primary-red: hsl(0, 78%, 62%);
     --color-primary-orange: hsl(34, 97%, 64%);
     --color-primary-blue: hsl(212, 86%, 64%);
 
@@ -19,7 +19,11 @@
     --color-blue-gray: hsl(229, 6%, 66%);
     --color-light-gray: hsl(0, 0%, 98%);
 
-    
+    /* ICONS */
+    --icon-cyan: url("assets/icon-supervisor.svg");
+    --icon-red: url("assets/icon-team-builder.svg");
+    --icon-orange: url("assets/icon-karma.svg");
+    --icon-blue: url("assets/icon-calculator.svg"); 
 }
 
 html {
@@ -31,12 +35,29 @@ body {
     font-size: 1.5rem;
 
     background-color: var(--color-light-gray);
-    padding: 8rem 4rem;
 }
+
+/* RESPONSIVE BREAKPOINTS */
+
+/* TODO: responsive breakpoints
+
+@media screen and (max-width: 350px) {
+    header {
+        
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    header {
+        
+    }
+} */
+
+/* HEADER */
 
 header {
     text-align: center;
-    margin-bottom: 6rem;
+    margin: 8rem auto 6rem;
 }
 
 h1 {
@@ -56,10 +77,14 @@ header p {
     color: var(--color-blue-gray);
 }
 
+/* MAIN SECTION AND CARDS */
+
 .container {
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 3rem; 
+    justify-content: center;
 }
 
 .card {
@@ -90,19 +115,19 @@ header p {
 }
 
 #cyan h2::before {
-    background-image: url("assets/icon-supervisor.svg");
+    background-image: var(--icon-cyan);
 }
 
 #red h2::before {
-    background-image: url("assets/icon-team-builder.svg");
+    background-image: var(--icon-red);
 }
 
 #orange h2::before {
-    background-image: url("assets/icon-karma.svg");
+    background-image: var(--icon-orange);
 }
 
 #blue h2::before {
-    background-image: url("assets/icon-calculator.svg");
+    background-image: var(--icon-blue);
 }
 
 .card h2 {
