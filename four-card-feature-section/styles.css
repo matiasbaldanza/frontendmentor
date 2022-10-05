@@ -1,0 +1,134 @@
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CUSTOM PROPERTIES */
+
+:root {
+    /* COLORS */
+    --color-primary-red: hsl(0, 78%, 62%);
+    --color-primary-cyan: hsl(180, 62%, 55%);
+    --color-primary-orange: hsl(34, 97%, 64%);
+    --color-primary-blue: hsl(212, 86%, 64%);
+
+    --color-dark-blue: hsl(234, 12%, 34%);
+    --color-blue-gray: hsl(229, 6%, 66%);
+    --color-light-gray: hsl(0, 0%, 98%);
+
+    
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    font-size: 1.5rem;
+
+    background-color: var(--color-light-gray);
+    padding: 8rem 4rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+h1 {
+    font-weight: 200;
+    font-size: 2.4rem;
+    color: var(--color-dark-blue);
+    margin-bottom: 2rem;
+}
+
+h1 span {
+    display: block;
+    font-weight: 600;
+}
+
+header p {
+    font-weight: 400;
+    color: var(--color-blue-gray);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem; 
+}
+
+.card {
+    margin: 0 auto;
+    padding: 3rem;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 2px 2px var(--color-blue-gray);
+    aspect-ratio: 350 / 250;
+    max-width: 350px;
+    max-height: 250px;
+    position: relative;     /* added to be able to position child pseudo-elements */
+}
+
+.card h2::before {
+    content: "";
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    /* <-- background-image of each icon is added in ID (cyan/red/etc.) */ 
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: center;
+    
+    position: absolute;
+    bottom: 25px;
+    right: 30px;
+}
+
+#cyan h2::before {
+    background-image: url("assets/icon-supervisor.svg");
+}
+
+#red h2::before {
+    background-image: url("assets/icon-team-builder.svg");
+}
+
+#orange h2::before {
+    background-image: url("assets/icon-karma.svg");
+}
+
+#blue h2::before {
+    background-image: url("assets/icon-calculator.svg");
+}
+
+.card h2 {
+    color: var(--color-dark-blue);
+    margin-bottom: 4px;
+}
+
+.card p {
+    color: var(--color-blue-gray);
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+}
+
+#cyan { 
+    border-top: 4px solid var(--color-primary-cyan);
+}
+
+#red { 
+    border-top: 4px solid var(--color-primary-red);
+}
+
+#orange { 
+    border-top: 4px solid var(--color-primary-orange);
+}
+
+#blue { 
+    border-top: 4px solid var(--color-primary-blue);
+}
+
